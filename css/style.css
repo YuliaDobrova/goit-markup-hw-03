@@ -62,9 +62,6 @@ img {
   font-size: 36px;
   line-height: 1.17;
   color: var(--title-text-color);
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center; */
   margin-bottom: 50px;
   text-align: center;
 }
@@ -76,6 +73,8 @@ img {
   letter-spacing: 0.03em;
   color: var(--title-text-color);
   cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
   border-radius: 4px;
   padding: 6px 22px;
   text-align: center;
@@ -99,6 +98,8 @@ img {
   background-color: var(--accent-blue-color);
   color: var(--accent-white-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  letter-spacing: 0.06em;
   border-radius: 4px;
   border-color: var(--accent-blue-color);
   min-width: 200px;
@@ -111,10 +112,8 @@ img {
   border-bottom: 1px solid #ececec;
 }
 .header-container {
-  align-self: center;
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
   align-items: center;
 }
 .navigation .logo.link {
@@ -175,29 +174,32 @@ a .accent {
   color: var(--accent-blue-color);
 }
 .address-list {
-  align-self: flex-end;
   margin-left: auto;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 }
+.address-list-item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .link.header-address {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   font-style: normal;
   color: var(--primary-text-color);
-  margin-left: 50px;
 }
 /* =================== END HEADER =================== */
 
 /* ===== MAIN ===== */
 /* =================== HERO =================== */
 .hero {
-  background-color: var(--footer-bg-color);
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+  /* На случай, если не загрузится фото */
+  background-color: var(--footer-bg-color);
 }
 .hero-title {
   font-weight: 900;
@@ -218,11 +220,14 @@ a .accent {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-right: -30px;
+  justify-content: center;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 .features-item {
-  margin-right: 30px;
-  flex-basis: cacl((100%-120px) / 4);
+  margin-left: 30px;
+  margin-top: 30px;
+  flex-basis: cacl((100% - 120px) / 4);
 }
 .features-list-title {
   font-weight: bold;
@@ -244,10 +249,12 @@ a .accent {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-right: -30px;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 .about-list-item {
-  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 30px;
   flex-basis: calc((100% - 90px) / 3);
 }
 /* =================== END ABOUT  =================== */
@@ -282,6 +289,23 @@ a .accent {
   margin-bottom: 10px;
 }
 
+.gallery .suptitle {
+  margin-bottom: 44px;
+}
+
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+
+.gallery-list-item {
+  width: 500px;
+  flex-basis: calc((100% - 120px) / 4);
+  margin-left: 30px;
+  margin-top: 30px;
+}
 /* =================== END TEAM  =================== */
 
 /* =================== PROJECTS =================== */
@@ -295,7 +319,7 @@ a .accent {
 .project-item {
   margin-top: 30px;
   margin-left: 30px;
-  flex-basis: ((100% - 90px) / 3);
+  flex-basis: cacl((100% - 90px) / 3);
 
   /* box-sizing: border-box; */
 }
